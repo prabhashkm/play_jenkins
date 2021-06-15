@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('build and publish') {
       steps{
-        withCredentials([usernamePassword(credentialsId: 'DockerCredentialsForGitHub', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
+        withCredentials([usernamePassword(credentialsId: 'DockerHubCreds', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
         sh "echo \"FROM debian:latest\" > Dockerfile"
         sh "echo \"RUN apt-get update && apt-get install -y git\" >> Dockerfile"
         sh "docker login --username $dockeruser --password $dockerpass"
