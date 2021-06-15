@@ -1,6 +1,10 @@
 pipeline {
 
-  agent any 
+  agent {
+    docker {
+      image 'debian:latest'
+    }
+  } 
     
   stages {
     stage('build and publish') {
