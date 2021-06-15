@@ -1,10 +1,5 @@
 pipeline {
 
-  environment {
-    dockeruser = "prabhatthedockerguy"
-    dockerpass = "IamusingDocker"
-  }
-
   agent any 
     
   stages {
